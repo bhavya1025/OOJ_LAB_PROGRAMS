@@ -1,0 +1,86 @@
+#include <stdio.h>
+#include<math.h>
+int main() 
+{
+  int n1,n2,option;
+  long long ans = 1;
+  printf("Enter the first number:");
+  scanf("%d",&n1);
+  printf("Enter the second number:");
+  scanf("%d",&n2);
+  
+    printf("\nInput your option:\n");
+    printf("1-Addition.\n2-Substraction.\n3-Multiplication.\n4-Division.\n5-Check for equal n=numbers.\n");
+    printf("6-Check for greater number.\n7-Check for lesser number.\n8-Average.\n9-number1^number2.\n10-number2^number1");
+    scanf("%d",&option);
+    while(option!=11) 
+	{
+    switch(option) 
+	{
+      case 1:
+        printf("The Addition of  %d and %d is: %d\n",n1,n2,n1+n2);
+        break;
+        
+      case 2:
+        printf("The Substraction of %d  and %d is: %d\n",n1,n2,n1-n2);
+        break;
+        
+      case 3:
+        printf("The Multiplication of %d  and %d is: %d\n",n1,n2,n1*n2);
+        break;  
+      
+      case 4:
+        if(n2==0) 
+		{
+          printf("The second integer is zero. Devide by zero.\n");
+        }
+		 else
+		  {
+          printf("The Division of %d  and %d is : %d\n",n1,n2,n1/n2);
+        }  
+        break;
+        
+      case 5: 
+        if(n1==n2)
+		{
+            printf("Equal Numbers!\n");
+        }
+        else
+            printf("Not Equal!\n");
+        break;
+      case 6:
+        if(n1>n2)
+		{
+            printf("%d is greater than %d\n",n1,n2);
+        }
+        else
+            printf("%d is greater than %d\n",n2,n1);
+        break;
+      case 7:
+        if(n1>n2)
+		{
+            printf("%d is less than %d\n",n2,n1);
+        }
+        else
+            printf("%d is less than %d\n",n1,n2);
+        break;
+      case 8:
+            printf("Average of these number is %d\n",(n1+n2)/2);
+            break;
+      case 9:
+            ans = pow(n1,n2);
+            printf("Number1^Number2 = %lld\n",&ans);
+            break;
+      case 10:
+            ans = pow(n2,n1);
+            printf("Number2^Number1 = %lld\n",&ans);
+            break;
+      default:
+        printf("Input correct option\n");
+        break; 
+    }
+    scanf("%d",&option);
+    }
+    printf("You have exit from the calculator");
+    return 0;
+}
